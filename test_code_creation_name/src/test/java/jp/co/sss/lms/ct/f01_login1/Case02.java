@@ -38,7 +38,6 @@ public class Case02 {
 	@Order(1)
 	@DisplayName("テスト01 トップページURLでアクセス")
 	void test01() {
-		// TODO ここに追加
 		goTo("http://localhost:8080/lms/");
 		// トップページに遷移した際のエビデンス01を取得
 		getEvidence(new Object() {}, "01");
@@ -51,7 +50,6 @@ public class Case02 {
 	@Order(2)
 	@DisplayName("テスト02 DBに登録されていないユーザーでログイン")
 	void test02() {
-		// TODO ここに追加
 		final WebElement loginId = webDriver.findElement(By.name("loginId"));
 		final WebElement password = webDriver.findElement(By.name("password"));
 		final WebElement loginBtn = webDriver.findElement(By.className("btn-primary"));
