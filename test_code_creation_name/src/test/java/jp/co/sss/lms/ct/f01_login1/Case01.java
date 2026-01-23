@@ -38,7 +38,9 @@ public class Case01 {
 	void test01() {
 		// TODO ここに追加
 		goTo("http://localhost:8080/lms/");
-		getEvidence(new Case01() {});
+
+		// トップページに遷移した際のエビデンス01を取得
+		getEvidence(new Object() {});
 
 		String currentUrl = webDriver.getCurrentUrl();
 		assertEquals(currentUrl, "http://localhost:8080/lms/");
