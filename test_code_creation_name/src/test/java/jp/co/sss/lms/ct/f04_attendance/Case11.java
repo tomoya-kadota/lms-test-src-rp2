@@ -43,6 +43,10 @@ public class Case11 {
 	@DisplayName("テスト01 トップページURLでアクセス")
 	void test01() {
 		goTo("http://localhost:8080/lms/");
+		
+		// ウィンドウサイズ最大化 
+		webDriver.manage().window().maximize();
+		
 		// トップページに遷移した際のエビデンス01を取得
 		getEvidence(new Object() {}, "01");
 
@@ -117,7 +121,6 @@ public class Case11 {
 
 		for (WebElement regularHoursBtn : regularHoursBtns) {
 			regularHoursBtn.click();
-			scrollBy("50");
 		}
 
 		// 勤怠情報直接変更画面にて定時ボタンをすべてクリックした後、エビデンス01を取得

@@ -48,6 +48,10 @@ public class Case10 {
 	@DisplayName("テスト01 トップページURLでアクセス")
 	void test01() {
 		goTo("http://localhost:8080/lms/");
+		
+		// ウィンドウサイズ最大化 
+		webDriver.manage().window().maximize();
+		
 		// トップページに遷移した際のエビデンス01を取得
 		getEvidence(new Object() {}, "01");
 

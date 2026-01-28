@@ -43,6 +43,10 @@ public class Case12 {
 	@DisplayName("テスト01 トップページURLでアクセス")
 	void test01() {
 		goTo("http://localhost:8080/lms/");
+		
+		// ウィンドウサイズ最大化 
+		webDriver.manage().window().maximize();
+		
 		// トップページに遷移した際のエビデンス01を取得
 		getEvidence(new Object() {}, "01");
 
@@ -118,6 +122,12 @@ public class Case12 {
 		
 		WebElement updateBtn = webDriver.findElement(By.cssSelector("input[type='submit'][value='更新']"));
 		
+		// 入力値の初期化
+		startTimeHour.selectByIndex(0);
+		startTimeMinute.selectByIndex(0);
+		endTimeHour.selectByIndex(0);
+		endTimeMinute.selectByIndex(0);
+		
 		// 【入力値①】出勤（時）：（空白）
 		startTimeHour.selectByVisibleText("");
 		// 【入力値②】出勤（分）：00
@@ -129,9 +139,6 @@ public class Case12 {
 		
 		// 入力値の入力後、エビデンス01を取得
 		getEvidence(new Object() {}, "01");
-		
-		// 更新ボタンまで画面スクロール
-		scrollBy("1000");
 		
 		updateBtn.click();
 		
@@ -167,6 +174,12 @@ public class Case12 {
 		
 		WebElement updateBtn = webDriver.findElement(By.cssSelector("input[type='submit'][value='更新']"));
 		
+		// 入力値の初期化
+		startTimeHour.selectByIndex(0);
+		startTimeMinute.selectByIndex(0);
+		endTimeHour.selectByIndex(0);
+		endTimeMinute.selectByIndex(0);
+		
 		// 【入力値①】出勤（時）：（空白）
 		startTimeHour.selectByVisibleText("");
 		// 【入力値②】出勤（分）：（空白）
@@ -178,9 +191,6 @@ public class Case12 {
 		
 		// 入力値の入力後、エビデンス01を取得
 		getEvidence(new Object() {}, "01");
-		
-		// 更新ボタンまで画面スクロール
-		scrollBy("1000");
 		
 		updateBtn.click();
 		
@@ -200,7 +210,6 @@ public class Case12 {
 		List<WebElement> errorInputList = webDriver.findElements(By.className("errorInput"));
 		assertTrue(errorInputList.get(0).isDisplayed());
 		assertTrue(errorInputList.get(1).isDisplayed());
-		
 	}
 
 	@Test
@@ -215,6 +224,12 @@ public class Case12 {
 		
 		WebElement updateBtn = webDriver.findElement(By.cssSelector("input[type='submit'][value='更新']"));
 		
+		// 入力値の初期化
+		startTimeHour.selectByIndex(0);
+		startTimeMinute.selectByIndex(0);
+		endTimeHour.selectByIndex(0);
+		endTimeMinute.selectByIndex(0);
+		
 		// 【入力値①】出勤（時）：09
 		startTimeHour.selectByVisibleText("09");
 		// 【入力値②】出勤（分）：00
@@ -226,9 +241,6 @@ public class Case12 {
 		
 		// 入力値の入力後、エビデンス01を取得
 		getEvidence(new Object() {}, "01");
-		
-		// 更新ボタンまで画面スクロール
-		scrollBy("1000");
 		
 		updateBtn.click();
 		
@@ -247,8 +259,7 @@ public class Case12 {
 		
 		List<WebElement> errorInputList = webDriver.findElements(By.className("errorInput"));
 		assertTrue(errorInputList.get(0).isDisplayed());
-		assertTrue(errorInputList.get(1).isDisplayed());
-		
+		assertTrue(errorInputList.get(1).isDisplayed());	
 	}
 
 	@Test
@@ -264,6 +275,12 @@ public class Case12 {
 		
 		WebElement updateBtn = webDriver.findElement(By.cssSelector("input[type='submit'][value='更新']"));
 		
+		// 入力値の初期化
+		startTimeHour.selectByIndex(0);
+		startTimeMinute.selectByIndex(0);
+		endTimeHour.selectByIndex(0);
+		endTimeMinute.selectByIndex(0);
+		
 		// 【入力値①】出勤（時）：09
 		startTimeHour.selectByVisibleText("09");
 		// 【入力値②】出勤（分）：00
@@ -277,9 +294,6 @@ public class Case12 {
 		
 		// 入力値の入力後、エビデンス01を取得
 		getEvidence(new Object() {}, "01");
-		
-		// 更新ボタンまで画面スクロール
-		scrollBy("1000");
 		
 		updateBtn.click();
 		
@@ -298,7 +312,6 @@ public class Case12 {
 		
 		List<WebElement> errorInputList = webDriver.findElements(By.className("errorInput"));
 		assertTrue(errorInputList.get(0).isDisplayed());
-		
 	}
 
 	@Test
@@ -310,9 +323,17 @@ public class Case12 {
 		Select startTimeMinute = new Select(webDriver.findElement(By.id("startMinute0")));
 		Select endTimeHour = new Select(webDriver.findElement(By.id("endHour0")));
 		Select endTimeMinute = new Select(webDriver.findElement(By.id("endMinute0")));
+		Select blankTime = new Select(webDriver.findElement(By.name("attendanceList[0].blankTime")));
 		WebElement note = webDriver.findElement(By.name("attendanceList[0].note"));
 		
 		WebElement updateBtn = webDriver.findElement(By.cssSelector("input[type='submit'][value='更新']"));
+		
+		// 入力値の初期化
+		startTimeHour.selectByIndex(0);
+		startTimeMinute.selectByIndex(0);
+		endTimeHour.selectByIndex(0);
+		endTimeMinute.selectByIndex(0);
+		blankTime.selectByIndex(0);
 		
 		// 【入力値①】出勤（時）：09
 		startTimeHour.selectByVisibleText("09");
@@ -327,9 +348,6 @@ public class Case12 {
 		
 		// 入力値の入力後、エビデンス01を取得
 		getEvidence(new Object() {}, "01");
-		
-		// 更新ボタンまで画面スクロール
-		scrollBy("1000");
 		
 		updateBtn.click();
 		
