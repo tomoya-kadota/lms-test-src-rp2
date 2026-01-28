@@ -44,7 +44,7 @@ public class Case05 {
 	void test01() {
 		goTo("http://localhost:8080/lms/");
 		
-		// ウィンドウサイズ最大化 
+		// ウィンドウサイズ最大化処理
 		webDriver.manage().window().maximize();
 		
 		// トップページに遷移した際のエビデンス01を取得
