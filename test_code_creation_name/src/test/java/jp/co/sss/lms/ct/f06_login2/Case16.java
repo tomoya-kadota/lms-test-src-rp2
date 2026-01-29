@@ -93,7 +93,7 @@ public class Case16 {
 		
 		nextBtn.click();
 		
-		// 「次へ」ボタンを押下した後のエビデンス01を取得
+		// 「次へ」ボタンを押下した後のエビデンス02を取得
 		getEvidence(new Object() {}, "02");
 		
 		assertThat(webDriver.getTitle(), containsString("パスワード変更"));
